@@ -44,8 +44,8 @@ function scrapArticleData(string $articleHref)
             $product['data']['variantData']['Variant 1']['priceVariant 1'] = $card->find('span[class=price]', 0)->innertext;
             $product['data']['variantData']['Variant 1']['oldPriceVariant 1'] = "0";
         } else {
-            $product['data']['variantData']['Variant 1']['priceVariant 1'] = $card->find('span[class=price-promo]', 0)->innertext;
-            $product['data']['variantData']['Variant 1']['oldPriceVariant 1'] = $card->find('del[class=price-old]', 0)->innertext;
+            $product['data']['variantData']['Variant 1']['priceVariant 1'] = $card->find('span[class=price]', 0)->innertext;
+            $product['data']['variantData']['Variant 1']['oldPriceVariant 1'] = "";
         }
     }
 

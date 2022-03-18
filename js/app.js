@@ -51,7 +51,7 @@ function fillTableWithData(page) {
           "<a href=" + products["result"][index][ind] + "> Link </a>";
         newRow.appendChild(newCell);
       } else if (ind == 6){
-        newCell.innerHTML = "<a href=http://barcode.loc/articleDetail.html?/articleHref=" + products["result"][index][1] + "> Link </a>";
+        newCell.innerHTML = "<a href=https://scrapperkf.herokuapp.com/articleDetail.html?/articleHref=" + products["result"][index][1] + "> Link </a>";
         newRow.appendChild(newCell);
       }else {
         newCell.innerHTML = products["result"][index][ind];

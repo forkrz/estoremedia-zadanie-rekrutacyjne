@@ -12,7 +12,7 @@ function scrapDataOnOnePage(int $i)
     foreach ($html->find($productCard) as $i => $card) {
         $products["product" . $i] = [
             'title' => $card->find('a[class="title"]', 0)->{'data-name'},
-            'detailsLink' => $card->find('a[class="title"]', 0)->href,
+            'detailsLink' => "http://estoremedia.space/DataIT/" . $card->find('a[class="title"]', 0)->href,
             'imgLink' =>    $card->find('img[class="card-img-top"]', 0)->src,
             'price' =>  $card->find('h5')[0]->innertext,
             'rating' => strval(substr($card->find('small[class="text-muted"]')[0]->innertext, 0, strpos($card->find('small[class="text-muted"]')[0]->innertext, " "))),
@@ -45,11 +45,10 @@ function getAllArticles(): array
 
 function saveDataInCsvFile()
 {
-    if(file_exists("data.csv")){
-        unlink('data.csv');
+    if(file_exists('../Api/data.csv')){
+        unlink('../Api/data.csv');
     };    
-
-    $file = fopen("data.csv", "w");
+    $file = fopen(__DIR__ . "/Api/data.csv", "w+");
     fputcsv($file, ['title', 'detailsLink', 'imgLink', 'price', 'rating', 'reviewsQty']);
     foreach (getAllArticles() as $pageArray) {
         foreach ($pageArray as $articleData) {
@@ -65,5 +64,3 @@ function saveDataInCsvFile()
     fclose($file);
     echo 'scrapping completed';
 }
-
-saveDataInCsvFile();

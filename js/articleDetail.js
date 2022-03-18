@@ -20,7 +20,6 @@ const products = await res.json();
 const tbody = document.getElementsByTagName("tbody")[0];
 const noOfProducts = products.result.length;
 
-console.log(products);
 
 function fillTableWithData() {
   for (let index = 0; index < noOfProducts; index++) {

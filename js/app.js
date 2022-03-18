@@ -42,7 +42,7 @@ function fillTableWithData(page) {
         }
       } else if (ind == 1) {
         newCell.innerHTML =
-          "<a href=http://estoremedia.space/DataIT/" +
+          "<a href=" +
           products["result"][index][ind] +
           "> Link </a>";
         newRow.appendChild(newCell);

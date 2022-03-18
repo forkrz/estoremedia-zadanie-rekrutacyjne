@@ -45,9 +45,9 @@ function getAllArticles(): array
 
 function saveDataInCsvFile()
 {
-    if(file_exists('../Api/data.csv')){
+    if (file_exists('../Api/data.csv')) {
         unlink('../Api/data.csv');
-    };    
+    };
     $file = fopen(__DIR__ . "/Api/data.csv", "w+");
     fputcsv($file, ['title', 'detailsLink', 'imgLink', 'price', 'rating', 'reviewsQty']);
     foreach (getAllArticles() as $pageArray) {
@@ -62,4 +62,5 @@ function saveDataInCsvFile()
         }
     }
     fclose($file);
+    echo 'scrapping completed';
 }

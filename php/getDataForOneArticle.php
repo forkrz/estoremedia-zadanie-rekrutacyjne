@@ -2,7 +2,6 @@
 
 declare(strict_types=1);
 ini_set('display_errors', 1);
-$url = "http://estoremedia.space/DataIT/product.php?id=2006623401";
 
 include('simple_html_dom.php');
 
@@ -38,7 +37,6 @@ function scrapArticleData(string $articleHref)
                     $product['data']['variantData'][$i]['oldPrice' . "$i"] = $variant['price_old'];
                 }
             }
-
         } else {
             $product['data']['variantData']['Variant 1']['titleVariant 1'] = $card->find('p', 0)->innertext;
         }

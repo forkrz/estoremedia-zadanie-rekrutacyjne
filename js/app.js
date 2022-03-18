@@ -1,5 +1,5 @@
 async function getResult() {
-  const query = await fetch("http://barcode.loc/php/Api/getData.php", {
+  const query = await fetch("https://scrapperkf.herokuapp.com/php/Api/getData.php", {
     method: "POST",
     headers: {
       Accept: "application/json",

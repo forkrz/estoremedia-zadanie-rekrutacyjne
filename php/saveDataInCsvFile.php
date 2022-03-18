@@ -62,5 +62,4 @@ function saveDataInCsvFile()
         }
     }
     fclose($file);
-    echo 'scrapping completed';
 }
